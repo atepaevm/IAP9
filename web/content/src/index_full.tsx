@@ -3,9 +3,7 @@ import IndexHeader from './index_header';
 import IndexBody from './index_body';
 import * as ReactDOM from 'react-dom';
 
-interface Nullable {};
-
-export default class Index extends React.Component <Nullable, Nullable> {
+export default class Index extends React.Component <null, null> {
     render(){
         return(
             <div>
