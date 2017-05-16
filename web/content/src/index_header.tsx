@@ -16,7 +16,7 @@ export default class IndexHeader extends React.Component<IndexHeaderProps, Index
         return (
             <div className="menu" id="menu">
                 <div className="container">
-                    Лабораторная работа {this.props.labnum}<br/>
+                    Лабораторная работа №{this.props.labnum}<br/>
                     {this.props.owners}<br/>
                     Вариант: {this.props.variant}
                 </div>
