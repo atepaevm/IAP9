@@ -6,6 +6,11 @@ html, body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: #25AAE1
+}
+
 .menu {
     position: fixed;
     left: 0;
