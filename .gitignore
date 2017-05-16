@@ -1,0 +1,9 @@
+target
+src/main/resources/*
+web/content/node_modules
+web/content/src/node_modules
+web/content/dest
+web/content/.idea
+web/content/src/*.js
+web/content/src/*.jsx
+.idea

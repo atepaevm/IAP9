@@ -1,0 +1,124 @@
+html, body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12.5px;
+    background: #dde6ed;
+    overflow-x: hidden;
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30%;
+    background: green;
+}
+
+.container {
+    margin-left: calc(50% - 240px);
+    margin-top: calc(21% - 320px);
+    color: gold;
+    width: 480px;
+    font-size: 20px;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+}
+
+.workspace {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    background: white;
+    width: 50%;
+    text-align: center;
+    min-height: 65%;
+    border-radius: 3px;
+}
+
+.content {
+    width: calc(100% - 40px);
+    padding: 15px;
+}
+
+.ui-slider {
+    text-align: center;
+}
+
+div.content div {
+    padding: 7px 7px 7px 16px;
+}
+
+.left-block {
+    display: inline-block;
+    position: absolute;
+    top: calc(5% - 10px);
+    left: 1%;
+    height: 90%;
+    width: 30%;
+}
+
+.middle-block {
+    position: absolute;
+    top: calc(5% - 10px);
+    left: 35%;
+    width: 30%;
+    height: 90%;
+}
+
+.right-block {
+    display: inline-block;
+    position: absolute;
+    top: calc(5% - 10px);
+    font-size: 16px;
+    left: 69%;
+    height: 90%;
+    width: 35%;
+}
+
+
+.brd {
+    border: 4px solid black;
+    position: absolute;
+    left: 0%;
+    padding: 5px;
+}
+
+.content--main {
+    width: 100%;
+    font-size: 12.5px;
+}
+
+.content--main--header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: calc(100% - 40px);
+    border-radius: 3px;
+    font-size: 15.5px;
+    background: #ddeaff;
+}
+
+.content--main--body {
+    width: calc(100% - 40px);
+    text-align: center;
+}
+
+.changeLocation {
+    margin-top: 40px;
+    color: blue;
+    font-size: 20px;
+}
+
+footer {
+    position: absolute;
+    top: 95%;
+    width: 100%;
+    min-height: 5%;
+    background: #c6cdd6;
+}
