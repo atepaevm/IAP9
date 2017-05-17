@@ -84,6 +84,7 @@
     <pathelement location="${maven.repo.local}/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar"/>
     <pathelement location="${maven.repo.local}/org/glassfish/main/common/simple-glassfish-api/4.0/simple-glassfish-api-4.0.jar"/>
     <pathelement location="${java.home}/../lib/tools.jar"/>
+    <pathelement location="lib/javax.servlet.jar" />
   </path>
 
   <!-- ====================================================================== -->
@@ -189,24 +190,18 @@
     <copy file="${maven.repo.local}/javax/websocket/javax.websocket-api/1.0/javax.websocket-api-1.0.jar" 
           todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
 
-    <exec executable="babel" dir="src/main/java/web/content">
-	<arg value="src" />
-	<arg value="--out-file" />
-	<arg value="index.js" />
-	<arg value="--plugins" />
-	<arg value="transform-react-jsx,transform-class-properties" />
-    </exec>
-
+    <exec executable="webpack" dir="web/content"/>
     
     <war destfile="${maven.build.dir}/${maven.build.finalName}.war" 
          compress="true" 
-         webxml="src/main/java/web/WEB-INF/web.xml">
+         webxml="web/WEB-INF/web.xml">
       <lib dir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
       <classes dir="${maven.build.outputDir}"/>
-      <fileset dir="src/main/java/web/content">
+      <fileset dir="web/content">
 	<include name="*.html"/>
 	<include name="*.css"/>
 	<include name="*.png"/>
+	<include name="*.jsp"/>
 	<include name="*.js"/>
       </fileset>
     </war>
