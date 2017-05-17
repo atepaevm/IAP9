@@ -9,13 +9,9 @@ export enum Actions {
     DELETE_ALL
 }
 
-
 export abstract class LocalDispatcher {
-    type : Actions;
     data : any;
-    constructor(type : Actions){
-        this.type = type;
-    }
+    constructor(public type : Actions){}
 
     toPlainObject(){
         return {
@@ -47,6 +43,7 @@ export class AddPointsDispathcer extends LocalDispatcher {
 }
 
 export class UpdatePointsDispatcher extends LocalDispatcher {
+
     data: { isInside : boolean[] };
 
     constructor(isInside : boolean[]){

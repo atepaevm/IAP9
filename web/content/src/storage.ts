@@ -30,7 +30,7 @@ export default class SingletonStorage {
     }
 
     private configureStore(){
-        return createStore(this.simpleReducer,  { radius: 1, points: [{x: 1, y: 1}], redraw: 0 });
+        return createStore(this.simpleReducer,  SingletonStorage.initialState );
     }
 
     constructor(){
