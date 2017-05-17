@@ -1,5 +1,5 @@
 module.exports = {
-	entry: './src/index_full.tsx',
+	entry: './src/pager.tsx',
 	output: {
 		filename: 'index.js',
 	},
@@ -24,6 +24,6 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [".tsx", ".ts", ".js"]
+        extensions: [".tsx", ".ts", ".js", ".jsx"]
     }
 };

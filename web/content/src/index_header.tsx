@@ -1,8 +1,4 @@
-
-
 import * as React from 'react';
-
-interface IndexHeaderState {}
 
 interface IndexHeaderProps {
     labnum : number;
@@ -10,8 +6,7 @@ interface IndexHeaderProps {
     variant : string;
 }
 
-export default class IndexHeader extends React.Component<IndexHeaderProps, IndexHeaderState> {
-
+export default class IndexHeader extends React.Component<IndexHeaderProps, any> {
     render(){
         return (
             <div className="menu" id="menu">

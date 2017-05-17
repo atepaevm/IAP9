@@ -2,8 +2,8 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import Time from "./time";
 
-export default class IndexBody extends React.Component<null, null>{
 
+export default class IndexBody extends React.Component<any, any>{
     render(){
         return(
             <div className="workspace">
@@ -17,7 +17,7 @@ export default class IndexBody extends React.Component<null, null>{
                             <Time/>
                         </div>
                         <div className="changeLocation">
-                            <Link to="/main">На главную</Link>
+                            <Link to="/web/content/main">На главную</Link>
                         </div>
                     </div>
                 </div>
