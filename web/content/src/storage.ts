@@ -1,4 +1,5 @@
 import {createStore} from 'redux';
+import * as ActionTypes from './action_types';
 
 export default class SingletonStorage {
 
@@ -11,11 +12,11 @@ export default class SingletonStorage {
         redraw: 0
     };
 
-    simpleReducer(state = SingletonStorage.initialState, action : { type: string, data : any} ) {
+    simpleReducer(state = SingletonStorage.initialState, action : ActionTypes.LocalDispatcher ) {
         switch(action.type) {
-            case "SET_RADIUS":
+            case ActionTypes.Actions.SET_RADIUS:
                 return Object.assign({}, state, {radius: action.data.radius});
-            case 'ADD_POINTS':
+            case ActionTypes.Actions.ADD_POINTS:
                 let xValues = action.data.x;
                 let yValues = action.data.y;
                 let array = [];

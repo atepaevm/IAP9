@@ -1,6 +1,5 @@
 import * as React from 'react';
-const Prime = require('primereact');
-const Slider = Prime.Slider;
+import SliderStep from './slider_step';
 
 interface RightColumnState{
     slider: number;
@@ -8,24 +7,30 @@ interface RightColumnState{
 
 export default class RightColumn extends React.Component< null, RightColumnState> {
 
-    onChangeSlider(e : any){
-        this.setState({ slider: e.value });
-    }
-
-    constructor(){
-        super();
-        this.state = { slider: 1 };
-        this.onChangeSlider = this.onChangeSlider.bind(this);
-    }
-
     render(){
         return(
-            <div>
-                {this.state.slider}
-                <Slider style={{ width: '200px' }} onChange={this.onChangeSlider} step={1} min={0} max={6} />
+            <div className="right-block">
+                <form>
+                    <div className="content">
+                        X:<br/>
+                        -4<input type="radio" name="xValue" value={-4}/>
+                        -3<input type="radio" name="xValue" value={-3}/>
+                        -2<input type="radio" name="xValue" value={-2}/>
+                        -1<input type="radio" name="xValue" value={-1}/>
+                        0<input type="radio" name="xValue" value={0}/>
+                        1<input type="radio" name="xValue" value={1}/>
+                        2<input type="radio" name="xValue" value={2}/>
+                        3<input type="radio" name="xValue" value={3}/>
+                        4<input type="radio" name="xValue" value={4}/>
+                    </div>
+                    <div className="content">
+                        Y:
+                        <input type="text" required={true} placeholder="fill me" id="yValue"
+                               style={{marginLeft: 15}}/>
+                    </div>
+                    <SliderStep/>
+                </form>
             </div>
         )
     }
-
-
 }
