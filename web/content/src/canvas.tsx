@@ -56,10 +56,8 @@ export default class CanvasGraph extends Canvas {
 
     canvasFill(){
         let canvas : any = document.getElementById(this.props.id);
-        console.log(canvas);
         let context = canvas.getContext("2d");
         let r = this.globalStorage.getState().radius;
-
         let canvasWidth = this.state.width;
         let canvasHeight = this.state.height;
         canvas.width = canvasWidth;
@@ -154,5 +152,7 @@ export default class CanvasGraph extends Canvas {
             <canvas width={this.state.width} height={this.state.height} className={this.props.className} id={this.props.id} style={{ background: "white" }}></canvas>
         );
     }
-
 }
+
+
+

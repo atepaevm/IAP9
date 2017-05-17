@@ -33,11 +33,11 @@ export class RadiusDispatcher extends LocalDispatcher {
 
 export class AddPointsDispathcer extends LocalDispatcher {
 
-    data: { x : number[], y: number[] };
+    data: { x : number[], y: number[], isInside: boolean[] };
 
-    constructor( x : number[], y: number[] ){
+    constructor( x : number[], y: number[], isInside: boolean[] ){
         super(Actions.ADD_POINTS);
-        this.data = { x: x, y: y };
+        this.data = { x: x, y: y, isInside: isInside };
     }
 
 }

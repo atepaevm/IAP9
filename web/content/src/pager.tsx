@@ -5,11 +5,7 @@ import * as ReactDOM from 'react-dom';
 import Index from './index_full';
 import Main from './main_full';
 
-import {Provider} from 'react-redux';
-
-
 const browserHistory = createHistory();
-
 
 class Pager extends React.Component <any, any> {
     render(){

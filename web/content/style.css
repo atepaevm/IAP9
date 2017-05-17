@@ -11,6 +11,13 @@ a {
     color: #25AAE1
 }
 
+.tableValue {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #25AAE1;
+
+}
+
 .menu {
     position: fixed;
     left: 0;

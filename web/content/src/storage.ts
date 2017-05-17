@@ -8,7 +8,7 @@ export default class SingletonStorage {
 
     static initialState = {
         radius: 1,
-        points: [{x: 1, y: 1}],
+        points: <any>[],
         redraw: 0
     };
 
@@ -19,9 +19,11 @@ export default class SingletonStorage {
             case ActionTypes.Actions.ADD_POINTS:
                 let xValues = action.data.x;
                 let yValues = action.data.y;
+                let isInside = action.data.isInside;
+                let r = state.radius;
                 let array = [];
                 for(let i in xValues){
-                    array.push({x: xValues[i], y: yValues[i]});
+                    array.push({x: xValues[i], y: yValues[i], isInside: isInside[i], r: r});
                 }
                 return Object.assign({}, state, {points: state.points.concat(array)});
             default:

@@ -4,6 +4,7 @@ import {connect, Provider} from 'react-redux';
 import SingletonStorage from './storage';
 import MainBody from "./main_body";
 
+
 function stateToProps(state : {radius: number, points: any}) {
     return{
         radius: state.radius,
@@ -16,7 +17,7 @@ type propState = {
     points: string;
 }
 
-const storage = new SingletonStorage();
+const storage = new SingletonStorage().globalStore;
 
 class MainComponent extends React.Component<any, any> {
     render(){
@@ -30,18 +31,18 @@ class MainComponent extends React.Component<any, any> {
     }
 }
 
-
-
 export default class Main extends React.Component<any, any> {
     render(){
         return(
-          <Provider store={storage.globalStore}>
+          <Provider store={storage}>
               <MainComponent/>
           </Provider>
         );
     }
 }
 connect<{}, {}, propState>(stateToProps)(Main);
+
+
 
 
 
