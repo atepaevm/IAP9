@@ -173,6 +173,7 @@ export class CanvasPoints extends Canvas {
     private socket : Socket;
     private center: {x: number, y: number};
     private transform: {x: number, y: number};
+    clickable: boolean;
 
     constructor(props: CanvasProps){
         super(props);
@@ -194,7 +195,10 @@ export class CanvasPoints extends Canvas {
         let r = this.globalStorage.getState().radius;
         this.center = { x: Math.floor(canvas.width / 2), y: Math.floor(canvas.height / 2)};
         this.transform = { x: Math.floor(r * (canvas.width - 32) / 8), y : Math.floor(r * (canvas.height - 32) / 8)};
-
+        if(!this.clickable){
+            document.getElementById(this.props.id).addEventListener('click', this.setNewPoint);
+            this.clickable = true;
+        }
         for(let i in points){
             this.printPoint(context, points[i], r);
         }
@@ -247,9 +251,13 @@ export class CanvasPoints extends Canvas {
         this.storageAdapter();
     }
 
+    componentWillUnmount() {
+        this.clickable = false;
+    }
+
     render(){
         return(
-            <canvas width={this.state.width} height={this.state.height} className={this.props.className} id={this.props.id} onClick={this.setNewPoint} ></canvas>
+            <canvas width={this.state.width} height={this.state.height} className={this.props.className} id={this.props.id} ></canvas>
         );
     }
 }
