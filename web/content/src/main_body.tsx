@@ -9,7 +9,7 @@ export default class MainBody extends React.Component<any, any> {
                 <div className="content">
                     <div className="content--main">
                         <div className="changeLocation">
-                            <Link to="/web/content">На начальную страницу</Link>
+                            <Link to="/">На начальную страницу</Link>
                         </div>
                     </div>
                 </div>

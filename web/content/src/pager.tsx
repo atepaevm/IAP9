@@ -12,8 +12,8 @@ class Pager extends React.Component <any, any> {
         return(
           <Router history={browserHistory} >
               <Switch>
-                  <Route path="/web/content/main" component={Main}/>
-                  <Route path="/web/content" component={Index}/>
+                  <Route path="/main" component={Main}/>
+                  <Route path="/" component={Index}/>
               </Switch>
           </Router>
         );

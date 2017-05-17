@@ -11,7 +11,7 @@ export default class SliderStep extends React.Component<any, any> {
     constructor(){
         super();
         this.state = { value: 1 };
-        globalStore.dispatch(new ActionTypes.RadiusDispatcher(1).toPlainObject());
+
         this.onChangeSlider = this.onChangeSlider.bind(this);
         this.onRadiusChange = this.onRadiusChange.bind(this);
     }
@@ -26,6 +26,10 @@ export default class SliderStep extends React.Component<any, any> {
                 value: storageRadius
             });
         }
+    }
+
+    componentWillMount(){
+        globalStore.dispatch(new ActionTypes.RadiusDispatcher(1).toPlainObject());
     }
 
     componentDidMount(){

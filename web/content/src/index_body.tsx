@@ -17,7 +17,7 @@ export default class IndexBody extends React.Component<any, any>{
                             <Time/>
                         </div>
                         <div className="changeLocation">
-                            <Link to="/web/content/main">На главную</Link>
+                            <Link to="/main">На главную</Link>
                         </div>
                     </div>
                 </div>

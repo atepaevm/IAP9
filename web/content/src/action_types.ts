@@ -4,7 +4,8 @@
 
 export enum Actions {
     SET_RADIUS,
-    ADD_POINTS,
+    ADD_POINT,
+    SET_DATABASE_POINTS,
     UPDATE_POINTS,
     DELETE_ALL
 }
@@ -31,33 +32,34 @@ export class RadiusDispatcher extends LocalDispatcher {
     }
 }
 
-export class AddPointsDispathcer extends LocalDispatcher {
+export class AddPointDispathcer extends LocalDispatcher {
 
-    data: { x : number[], y: number[], isInside: boolean[] };
+    data: { x : number, y: number, r: number, isInside: boolean };
 
-    constructor( x : number[], y: number[], isInside: boolean[] ){
-        super(Actions.ADD_POINTS);
-        this.data = { x: x, y: y, isInside: isInside };
+    constructor( x : number, y: number, r: number, isInside: boolean){
+        super(Actions.ADD_POINT);
+        this.data = { x: x, y: y, r: r, isInside: isInside};
+    }
+}
+
+export class SetDatabasePointsDispatcher extends LocalDispatcher {
+
+    constructor(public data : {points: {x : number, y: number, r: number, isInside: boolean}[]}){
+        super(Actions.SET_DATABASE_POINTS);
     }
 
 }
 
 export class UpdatePointsDispatcher extends LocalDispatcher {
-
-    data: { isInside : boolean[] };
-
-    constructor(isInside : boolean[]){
+    constructor(public data : { points: {x : number, y: number, isInside: boolean}[] }){
         super(Actions.UPDATE_POINTS);
-        this.data = { isInside: isInside };
     }
 }
 
 export class DeleteAllPoints extends LocalDispatcher {
-
     constructor(){
         super(Actions.DELETE_ALL);
     }
-
 }
 
 
