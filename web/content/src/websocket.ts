@@ -26,7 +26,12 @@ export default class SingletonWebSocket {
             }));
         };
         this.Socket.onmessage = function (event : any) {
-            let message = JSON.parse(event.data);
+            let message;
+            try{
+                message = JSON.parse(event.data);
+            } catch (e){
+                message = { type : 'F', data : {} };
+            }
             let data = message.data;
             switch (message.type){
                 case 'G':
@@ -40,6 +45,9 @@ export default class SingletonWebSocket {
                     break;
                 case 'C':
                     self.storage.dispatch(new ActionTypes.UpdatePointsDispatcher(data.points).toPlainObject());
+                    break;
+                case 'F':
+                    console.log(event.data);
                     break;
                 default:
                     console.log(message);

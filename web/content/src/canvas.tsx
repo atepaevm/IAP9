@@ -247,11 +247,15 @@ export class CanvasPoints extends Canvas {
 
     componentDidMount() {
         window.addEventListener("resize", this.canvasLogic);
+        this.radius = this.globalStorage.getState().radius;
         this.unmount = this.globalStorage.subscribe(this.storageAdapter);
         this.storageAdapter();
     }
 
     componentWillUnmount() {
+        window.removeEventListener("resize", this.canvasLogic);
+        this.unmount();
+        document.getElementById(this.props.id).removeEventListener('click', this.setNewPoint);
         this.clickable = false;
     }
 
